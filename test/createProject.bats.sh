@@ -4,25 +4,17 @@ load 'test_helper/bats-assert/load'
 
 
 setup() {
-
-
   mkdir -p ./tmp/test_client
-
   cd ./tmp/test_client
-
   TODAY=`date +%Y%m%d`
-
 }
-
 
 teardown() {
   cd -
   rm -rf ./tmp/test_client
 }
 
-
-
-@test "create.Create empty project" {
+@test "createProject.Create empty project" {
 
   run igor -c project test
 
@@ -48,15 +40,12 @@ teardown() {
 
 }
 
-
-@test "create.Create empty project fails when trying to create it again" {
+@test "createProject.Create empty project fails when trying to create it again" {
 
   run igor -c project test2
-
   assert_output --partial "Base folder structure created"
 
   run igor -c project test2
-
   assert_failure
 
 }
