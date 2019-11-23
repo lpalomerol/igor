@@ -1,10 +1,12 @@
 HERE=$(dirname $0)
 source $HERE/bin/createProject.sh
+source $HERE/bin/createRscriptFile.sh
 
 function createClient(){
   echo "I should create client folder [$1] here"
   if [ -d "$1" ]; then
     echo "Folder $1 exists, aborting"
+    exit -1
   else
     mkdir $1
     echo "Folder [$1] created"
@@ -22,6 +24,8 @@ function create(){
     project)
       createProject "." $TITLE
       ;;
+    rmd)
+      createRscriptFile $TITLE
   esac
 
 }

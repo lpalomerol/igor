@@ -2,6 +2,10 @@
 
 HERE=$(dirname $0)
 
+source $HERE/config
+export IGOR_CONFIG_AUTHOR
+
+
 source $HERE/bin/create.sh
 
 function version(){
@@ -13,8 +17,9 @@ function usage(){
     where
       -h --help show this help
       -c --create Creates something: samples
-         client: Creates a create
+         client: Creates a client
          project: Creates a project
+         rmd: Creates a Rmd file
   "
 }
 
