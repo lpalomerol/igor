@@ -12,6 +12,9 @@ function createProject(){
 
   if [ ! -d "$FOLDER" ]; then
     mkdir -p $FOLDER
+  else
+    echo "ERROR $FOLDER exists"
+    exit -1
   fi
 
   echo "Creating doc folder"
@@ -25,10 +28,10 @@ function createProject(){
   mkdir -p $FOLDER/src/sh
   mkdir -p $FOLDER/src/r
 
-  cp $PTP/lib/loaders/loadRData.R $FOLDER/src/r
-  cp $PTP/lib/formatters/formatTcgaBarcode.R $FOLDER/src/r
+#  cp $PTP/lib/loaders/loadRData.R $FOLDER/src/r
+#  cp $PTP/lib/formatters/formatTcgaBarcode.R $FOLDER/src/r
 
-  echo "Creating blin folder"
+  echo "Creating bin folder"
   mkdir -p $FOLDER/bin
 
   echo "Creating results folder"

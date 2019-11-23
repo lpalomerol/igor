@@ -1,5 +1,6 @@
 #!/usr/bin/env bats
 
+
 @test "basic.Display version (short)" {
   VERSION=$(igor -v | sed 's/version.*/version/')
   echo $VERSION
