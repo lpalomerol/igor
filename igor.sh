@@ -1,12 +1,10 @@
 #!/bin/bash
 
-HERE=$(dirname $0)
+IGOR_PATH=`dirname $(realpath $0)`
 
-source $HERE/config
-export IGOR_CONFIG_AUTHOR
+source $IGOR_PATH/.env
 
-
-source $HERE/bin/create.sh
+source $IGOR_PATH/bin/create.sh
 
 function version(){
   echo "Igor version 0.0.1"
@@ -47,3 +45,5 @@ do
     esac
     shift
 done
+
+
