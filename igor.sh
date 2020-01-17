@@ -15,11 +15,14 @@ function usage(){
     where
       -h --help show this help
       -c --create Creates something: samples
-         client: Creates a client
-         project: Creates a project
-         rmd: Creates a Rmd file
+         client: Creates a client folder structure in current location
+         project: Creates a project in current location
+         rmd: Creates a Rmd file in current in current location
+	 exp: Creates a new experiment in cuurrent locationn
   "
 }
+
+echo $IGOR_TEMPLATES
 
 
 # options may be followed by one colon to indicate they have a required argument
