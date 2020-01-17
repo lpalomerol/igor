@@ -1,0 +1,26 @@
+!/bin/sh
+
+#Management dependencies
+#luisete
+source  ../../../../src/say.sh
+source  ../../../../src/ask.sh
+source  ../../../../src/newFolder.sh
+
+#Bash launchers
+#source ../../src/sh/doSomething.sh
+
+say "Do something"
+
+RESULTS_FLDR=../results/$(basename `pwd`)
+
+cd ../../bin
+
+#End of experiments
+cd - > /dev/null
+
+response=$(ask "Do you want open results folder?")
+if [[ $response =~ ^(yes|y)$ ]]; then
+  cygstart .
+fi
+
+

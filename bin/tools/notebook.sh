@@ -11,6 +11,9 @@ function newLog(){
 function toNotebook(){
     local NOTEBOOK_TEXT=$1
     local NOTEBOOK_PATH=$2
-
-    echo $(newLog "AUTO" "'$NOTEBOOK_TEXT'") >> $NOTEBOOK_PATH
+    if [ -f $NOTEBOOK_PATH ]; then
+	echo $(newLog "AUTO" "'$NOTEBOOK_TEXT'") >> $NOTEBOOK_PATH
+    else
+	warn "No $NOTEBOOK_PATH found"
+    fi
 }
