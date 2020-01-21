@@ -1,6 +1,11 @@
 function createExperiment(){
 
     local RAW_FOLDER=$1
+    if [ -z "$RAW_FOLDER" ]; then
+	err "Experiment is empty, aborting"
+	exit -1
+    fi
+
     local TODAY=`date +%Y%m%d`
     local EXPERIMENT_NAME=$TODAY'.'$RAW_FOLDER
     RUNALL_BASH=$EXPERIMENT_NAME/runall.sh

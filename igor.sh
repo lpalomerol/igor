@@ -6,6 +6,7 @@ source $IGOR_PATH/.env
 
 source $IGOR_PATH/bin/create.sh
 source $IGOR_PATH/bin/launcher.sh
+source $IGOR_PATH/bin/add_launcher.sh
 
 function version(){
   echo "Igor version 0.0.1"
@@ -19,13 +20,14 @@ function usage(){
          client: Creates a client folder structure in current location
          project: Creates a project in current location
          rmd: Creates a Rmd file in current in current location
-	 exp: Creates a new experiment in cuurrent locationn
+	 exp: Creates a new experiment in current locationn
       -l --launcher Builds a launcher snippet
+      -a --add_launcher Adds a launcher to experiment
   "
 }
 
 # options may be followed by one colon to indicate they have a required argument
-if ! options=$(getopt -o hvcl -l help,version,create,launcher -- "$@")
+if ! options=$(getopt -o achlvl -l add_launcher,create,launcher,help,version -- "$@")
 then
     # something went wrong, getopt will put out an error message for us
     exit 1
@@ -40,6 +42,7 @@ do
     -v|--version) version ;;
     -c|--create) create $3 $4;;
     -l|--launcher) launcher $3 $4;;
+    -a|--add_launcher) add_launcher $3 $4;;
     (--) shift; break;;
     (-*) echo "$0: error - unrecognized option $2" 1>&2; exit 1;;
     (*) break;;
