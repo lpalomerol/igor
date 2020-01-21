@@ -5,6 +5,7 @@ IGOR_PATH=`dirname $(realpath $0)`
 source $IGOR_PATH/.env
 
 source $IGOR_PATH/bin/create.sh
+source $IGOR_PATH/bin/launcher.sh
 
 function version(){
   echo "Igor version 0.0.1"
@@ -19,14 +20,12 @@ function usage(){
          project: Creates a project in current location
          rmd: Creates a Rmd file in current in current location
 	 exp: Creates a new experiment in cuurrent locationn
+      -l --launcher Builds a launcher snippet
   "
 }
 
-echo $IGOR_TEMPLATES
-
-
 # options may be followed by one colon to indicate they have a required argument
-if ! options=$(getopt -o hvc -l help,version,create -- "$@")
+if ! options=$(getopt -o hvcl -l help,version,create,launcher -- "$@")
 then
     # something went wrong, getopt will put out an error message for us
     exit 1
@@ -40,8 +39,7 @@ do
     -h|--help) usage ;;
     -v|--version) version ;;
     -c|--create) create $3 $4;;
-    # for options with required arguments, an additional shift is required
-#    -c|--clong) cargument="$2" ; shift;;
+    -l|--launcher) launcher $3 $4;;
     (--) shift; break;;
     (-*) echo "$0: error - unrecognized option $2" 1>&2; exit 1;;
     (*) break;;

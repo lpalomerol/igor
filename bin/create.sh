@@ -3,6 +3,7 @@ HERE=$(dirname `realpath $0`)
 source $HERE/bin/tools/notebook.sh
 source $HERE/bin/tools/git.sh
 source $HERE/bin/tools/dialogs.sh
+source $HERE/bin/tools/cleaners.sh
 
 
 source $HERE/bin/createClient.sh
@@ -13,8 +14,9 @@ source $HERE/bin/createRscriptFile.sh
 
 function create(){
 
-    local QUERY=$(echo $1 | sed "s/'//g")
-    local TITLE=$(echo $2 | sed "s/'//g")
+    local QUERY=`cleanInput $1`
+    local TITLE=`cleanInput $2`
+
     case $QUERY in
 	client)
 	    say "Creating client $TITLE"
