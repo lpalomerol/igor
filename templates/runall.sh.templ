@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 #Management dependencies
 source  ../../../../common_src/bash_dialogs/say.sh
@@ -19,7 +19,7 @@ cd - > /dev/null
 
 response=$(ask "Do you want open results folder?")
 if [[ $response =~ ^(yes|y)$ ]]; then
-  cygstart .
+  nemo . &
 fi
 
 
