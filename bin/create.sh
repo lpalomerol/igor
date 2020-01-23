@@ -27,6 +27,12 @@ function create(){
 	    FOLDER=$(createProject "." $TITLE)
 	    GIT_PATH=`echo $(inGit $FOLDER)`
 	    if $(echo $GIT_PATH | grep -q "git"); then
+		touch $FOLDER/bin/.gitignore
+		echo '*.txt' > $FOLDER/bin/.gitignore
+		echo '*.tsv' >> $FOLDER/bin/.gitignore
+		echo '*.csv' >> $FOLDER/bin/.gitignore
+		echo '*.png' >> $FOLDER/bin/.gitignore
+		echo '*.eps' >> $FOLDER/bin/.gitignore
 		git add $FOLDER
 		say "Base folder structure created at $FOLDER (and added to GIT)"
 	    else
