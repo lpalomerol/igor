@@ -29,6 +29,12 @@ if(exists('"'"'params'"'"')==FALSE){
 
 ```
 
+```{r describe_params}
+
+t(data.frame(params))
+
+```
+
 ## Introduction
 
 ## Data preprocessing

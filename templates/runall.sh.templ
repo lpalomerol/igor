@@ -19,7 +19,7 @@ cd - > /dev/null
 
 response=$(ask "Do you want open results folder?")
 if [[ $response =~ ^(yes|y)$ ]]; then
-  nemo . &
+  xdg-open . &
 fi
 
 
