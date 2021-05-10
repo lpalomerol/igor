@@ -35,29 +35,36 @@ t(data.frame(params))
 
 ```
 
-## Introduction
+# Introduction
 
-## Data preprocessing
+# Data preprocessing
 
 ```{r deps}
 
-suppressMessages(library(knitr))
-suppressMessages(library(dplyr))
-suppressMessages(library(foreach))
-
-#suppressWarnings(suppressMessages(library(survival)))
+library(knitr)
+library(dplyr)
+library(foreach)
 
 opts_chunk$set(dev=c("png","postscript"))
 
 ```
 
-### Loading Data
+## Loading Data
 
 ```{r data_load}
 
 ```
 
-## Conclusion
+# Conclusion
+
+# Session
+
+```{r session}
+
+sessionInfo()
+
+```
+
 
 ' > $SCRIPT_NAME
 
