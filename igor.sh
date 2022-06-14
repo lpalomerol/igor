@@ -19,6 +19,7 @@ function usage(){
       -c --create Creates something: samples
          client: Creates a client folder structure in current location
          project: Creates a project in current location
+         r: Creates a R file in current in current location
          rmd: Creates a Rmd file in current in current location
 	 exp: Creates a new experiment in current locationn
       -l --launcher Builds a launcher snippet

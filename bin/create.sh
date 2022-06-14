@@ -9,7 +9,9 @@ source $HERE/bin/tools/cleaners.sh
 source $HERE/bin/createClient.sh
 source $HERE/bin/createExperiment.sh
 source $HERE/bin/createProject.sh
+
 source $HERE/bin/createRscriptFile.sh
+source $HERE/bin/createRFile.sh
 
 
 function create(){
@@ -37,6 +39,16 @@ function create(){
 		say "Base folder structure created at $FOLDER (and added to GIT)"
 	    else
 		say "Base folder structure created at $FOLDER"
+	    fi
+	    ;;
+	r)
+	    say "Creating R file from $TITLE"
+	    FILENAME=$(createRFile $TITLE)
+	    if $(echo `echo $(inGit $pwd)` | grep -q "git"); then
+		git add $FILENAME
+		say "Created $FILENAME R script (and added to GIT)"
+	    else
+		say "Created $FILENAME R script"
 	    fi
 	    ;;
 	rmd)
