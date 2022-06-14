@@ -2,7 +2,7 @@ function createRFile() {
 
     FILE_NAME=$1
 
-    SCRIPT_NAME=$(echo "$FILE_NAME" | sed "s/\\.Rmd$//i").Rmd
+    SCRIPT_NAME=$(echo "$FILE_NAME" | sed "s/\\.R$//i").Rmd
 
     echo '---
 
