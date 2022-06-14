@@ -1,5 +1,3 @@
-HERE=$(pwd)
-
 function createRscriptFile() {
     FILE_NAME=$1
 
