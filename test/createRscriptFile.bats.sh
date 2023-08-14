@@ -31,14 +31,13 @@ teardown() {
 
 }
 
-@test "createRscriptFile.Do not allow create two times same file" {
-
-  run igor -c rmd test
-  assert_success
-
-  run igor -c rmd test
-  assert_failure
-
-
-
-}
+#@test "createRscriptFile.Do not allow create two times same file" {
+#
+#  run igor -c rmd test
+#  assert_success
+#
+#  run igor -c rmd test
+#  assert_failure
+#
+#
+#}

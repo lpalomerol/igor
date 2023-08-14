@@ -8,10 +8,12 @@ title: ""
 author: "'$IGOR_AUTHOR'"
 date: "`r format(Sys.time(), '"'"'%d %B, %Y'"'"')`"
 output:
-  html_document:
+  bookdown::word_document2: default    
+  bookdown::pdf_document2: default  
+  bookdown::html_document2: 
     self_contained: yes
     toc: true
-    theme: united
+    theme: united  
 params:
   foo: "bar"
 ---

@@ -2,10 +2,9 @@ function createRFile() {
 
     FILE_NAME=$1
 
-    SCRIPT_NAME=$(echo "$FILE_NAME" | sed "s/\\.R$//i").Rmd
+    SCRIPT_NAME=$(echo "$FILE_NAME" | sed "s/\\.R$//i").R
 
-    echo '---
-
+    echo '
 suppressMessages(library(optparse))
 
 
